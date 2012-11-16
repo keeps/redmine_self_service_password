@@ -1,12 +1,12 @@
 require 'redmine'
 require 'dispatcher'
-require 'mailer_patch'
+require 'account_controller_patch'
 
 Redmine::Plugin.register :redmine_self_service_password do
   name 'Redmine Self Service Password plugin'
   author 'Sébastien Leroux'
   description 'This is a plugin that allows Redmine to work with the Keep\'s Authentication Management Service'
-  version '0.0.2'
+  version '0.0.3'
   author_url 'mailto:sleroux@keep.pt'
 
   settings :default => {
@@ -18,6 +18,6 @@ Redmine::Plugin.register :redmine_self_service_password do
 end
 
 Dispatcher.to_prepare do
-	 require_dependency 'mailer'
+	 require_dependency 'account_controller'
   AccountController.send(:include, AccountControllerPatch)
 end

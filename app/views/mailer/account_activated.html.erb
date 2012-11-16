@@ -1,2 +1,2 @@
-<p><%= l(:notice_account_activated_ssp) %></p>
+<p><%= l(:notice_account_activated_ssp, :authenticationServiceURL => Setting.plugin_redmine_self_service_password['authenticationServiceURL']) %></p>
 <p><%= l(:label_login) %>: <%= link_to h(@login_url), @login_url %></p>
