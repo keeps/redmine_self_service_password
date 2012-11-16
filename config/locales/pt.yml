@@ -2,3 +2,5 @@
 pt:
   notice_account_activated_ssp: A sua conta foi activada. Antes que possa autenticar-se terá que definir a sua palavra-chave no sistema de autenticação da KEEP SOLUTIONS. Irá receber um email com instruções para defenir a sua palavra-chave. Poderá também definir a sua palavra-chave acedendo diretamente a https://www.keep.pt/ams/?action=sendtoken. Depois de ter definido corretamente a sua palavra-chave poderá autenticar-se usando o endereço em baixo.
   authenticationServiceURL: Endereço do serviço de passwords
+  notice_account_invalid_creditentials_ssp: "Utilizador ou palavra-chave inválidos. <a href='%{authenticationServiceURL}?action=sendtoken' target='_blank'>Recuperar a palavra-chave</a>"
+  label_send_password_reset_email: Enviar email de recuperação de password

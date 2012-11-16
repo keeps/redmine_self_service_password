@@ -2,3 +2,5 @@
 en:
   notice_account_activated_ssp: Your account has been activated. Before you can login, you need to set your password in KEEP SOLUTIONS authentication management system. You will receive an email with information on how to set your password, if you don't recieve the email, you can access the authentication management system directly at https://www.keep.pt/ams/?action=sendtoken. After sucessfully set your password, you can log in using the link bellow.
   authenticationServiceURL: Self service password service address
+  notice_account_invalid_creditentials_ssp: "Invalid user or password. <a href='%{authenticationServiceURL}?action=sendtoken' target='_blank'>Recover your password</a>"
+  label_send_password_reset_email: Send password reset email

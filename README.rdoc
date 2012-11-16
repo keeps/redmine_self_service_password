@@ -1,3 +1,13 @@
-= self_service_password
+= Redmine Self Service Password
 
-Description goes here
+The Redmine Self Service Password plugin allows Redmine to work with the Keep's Authentication Management Service.
+
+== Compatibility
+
+This plugin works (has been tested) with redmine v1.4
+
+== Installation
+
+* Place the plugin into  +/path/to/redmine/vendor/plugins+ . The name of the plugin's directory/folder should be *redmine_self_service_password*.
+* Restart redmine.
+* Configure the Redmine Self Service Password plugin (administration > plugins > Redmine Self Service Password plugin > Configure) with the address of the AMS service ( +[amsURL]?action=sendtoken+)

@@ -5,7 +5,8 @@ module AccountControllerPatch
     base.class_eval do
       alias_method_chain :register_automatically, :ssp
       alias_method_chain :register, :ssp
-     alias_method_chain :activate, :ssp
+      alias_method_chain :activate, :ssp
+      alias_method_chain :invalid_credentials, :ssp
     end
   end
 
@@ -62,6 +63,12 @@ module AccountControllerPatch
     end
     redirect_to :action => 'login'
   end
+
+  def invalid_credentials_with_ssp
+    logger.warn "Failed login for '#{params[:username]}' from #{request.remote_ip} at #{Time.now.utc}"
+    flash.now[:error] = l(:notice_account_invalid_creditentials_ssp , :authenticationServiceURL => Setting.plugin_redmine_self_service_password['authenticationServiceURL'])
+  end
+
 
   def register_automatically_with_ssp(user, &block)
     # Automatic activation
