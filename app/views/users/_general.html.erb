@@ -1,0 +1,14 @@
+<% labelled_form_for @user do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  <% if @user.active? && email_delivery_enabled? -%>
+    <p><label><%= check_box_tag 'send_information', 1, true %> <%= l(:label_send_information) %></label></p>
+  <% end -%>
+  <p><%= submit_tag l(:button_save) %></p>
+<% end %>
+<p>
+<form method="POST" action="[https://www.keep.pt/ams]/index.php?action=sendtoken" target="_blank">
+<input type="hidden" name="login" value="<%= @user.login %>"/>
+<input type="hidden" name="mail" value="<%= @user.mail %>"/>
+<input type="submit" value="Send password reset email"/>
+</form>
+</p>
