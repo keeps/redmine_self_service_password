@@ -6,7 +6,7 @@
   <p><%= submit_tag l(:button_save) %></p>
 <% end %>
 <p>
-<form method="POST" action="<%= Setting.plugin_redmine_self_service_password['authenticationServiceURL']%>?action=sendtoken" target="_blank">
+<form method="POST" action="<%= Setting.plugin_redmine_self_service_password['selfServicePasswordURL']%>?action=sendtoken" target="_blank">
 <input type="hidden" name="login" value="<%= @user.login %>"/>
 <input type="hidden" name="mail" value="<%= @user.mail %>"/>
 <input type="submit" value="<%= l(:label_send_password_reset_email) %>"/>

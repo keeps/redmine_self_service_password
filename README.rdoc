@@ -10,4 +10,4 @@ This plugin works (has been tested) with redmine v1.4
 
 * Place the plugin into  +/path/to/redmine/vendor/plugins+ . The name of the plugin's directory/folder should be *redmine_self_service_password*.
 * Restart redmine.
-* Configure the Redmine Self Service Password plugin (administration > plugins > Redmine Self Service Password plugin > Configure) with the address of the AMS service ( +[amsURL]?action=sendtoken+)
+* Configure the Redmine Self Service Password plugin (administration > plugins > Redmine Self Service Password plugin > Configure) with the name and address of the AMS service ( +[amsURL]?action=sendtoken+)

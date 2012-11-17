@@ -30,7 +30,7 @@ module AccountControllerPatch
         if @user.save
           session[:auth_source_registration] = nil
           self.logged_user = @user
-          flash[:notice] = l(:notice_account_activated_ssp, :authenticationServiceURL => Setting.plugin_redmine_self_service_password['authenticationServiceURL'],:authenticationServiceName => Setting.plugin_redmine_self_service_password['authenticationServiceName'])
+          flash[:notice] = l(:notice_account_activated_ssp, :selfServicePasswordURL => Setting.plugin_redmine_self_service_password['selfServicePasswordURL'],:selfServicePasswordName => Setting.plugin_redmine_self_service_password['selfServicePasswordName'])
           redirect_to :controller => 'my', :action => 'account'
         end
       else
@@ -59,14 +59,14 @@ module AccountControllerPatch
     user.activate
     if user.save
       token.destroy
-      flash[:notice] = l(:notice_account_activated_ssp, :authenticationServiceURL => Setting.plugin_redmine_self_service_password['authenticationServiceURL'],:authenticationServiceName => Setting.plugin_redmine_self_service_password['authenticationServiceName'])
+      flash[:notice] = l(:notice_account_activated_ssp, :selfServicePasswordURL => Setting.plugin_redmine_self_service_password['selfServicePasswordURL'],:selfServicePasswordName => Setting.plugin_redmine_self_service_password['selfServicePasswordName'])
     end
     redirect_to :action => 'login'
   end
 
   def invalid_credentials_with_ssp
     logger.warn "Failed login for '#{params[:username]}' from #{request.remote_ip} at #{Time.now.utc}"
-    flash.now[:error] = l(:notice_account_invalid_creditentials_ssp , :authenticationServiceURL => Setting.plugin_redmine_self_service_password['authenticationServiceURL'],:authenticationServiceName => Setting.plugin_redmine_self_service_password['authenticationServiceName'])
+    flash.now[:error] = l(:notice_account_invalid_creditentials_ssp , :selfServicePasswordURL => Setting.plugin_redmine_self_service_password['selfServicePasswordURL'],:selfServicePasswordName => Setting.plugin_redmine_self_service_password['selfServicePasswordName'])
   end
 
 
@@ -76,7 +76,7 @@ module AccountControllerPatch
     user.last_login_on = Time.now
     if user.save
       self.logged_user = user
-      flash[:notice] = l(:notice_account_activated_ssp, :authenticationServiceURL => Setting.plugin_redmine_self_service_password['authenticationServiceURL'],:authenticationServiceName => Setting.plugin_redmine_self_service_password['authenticationServiceName'])
+      flash[:notice] = l(:notice_account_activated_ssp, :selfServicePasswordURL => Setting.plugin_redmine_self_service_password['selfServicePasswordURL'],:selfServicePasswordName => Setting.plugin_redmine_self_service_password['selfServicePasswordName'])
       redirect_to :controller => 'my', :action => 'account'
     else
       yield if block_given?
