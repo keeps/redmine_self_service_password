@@ -10,7 +10,8 @@ Redmine::Plugin.register :redmine_self_service_password do
   author_url 'mailto:sleroux@keep.pt'
 
   settings :default => {
-    'authenticationServiceURL' => 'https://www.keep.pt/ams/'
+    'authenticationServiceURL' => 'https://www.keep.pt/ams/',
+    'authenticationServiceName' => 'KEEP SOLUTIONS authentication management service'
   }, :partial => 'settings/self_service_password'
   project_module :self_service_password do
     permission :self_service, {:self_service_password => :show}
