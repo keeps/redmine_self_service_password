@@ -13,9 +13,6 @@ Redmine::Plugin.register :redmine_self_service_password do
     'selfServicePasswordURL' => 'https://www.keep.pt/ams/',
     'selfServicePasswordName' => 'KEEP SOLUTIONS authentication management service'
   }, :partial => 'settings/self_service_password'
-  project_module :self_service_password do
-    permission :self_service, {:self_service_password => :show}
-  end
 end
 
 Dispatcher.to_prepare do
