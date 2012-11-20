@@ -1,2 +1,2 @@
-<%= l(:notice_account_activated_ssp , :selfServicePasswordURL => Setting.plugin_redmine_self_service_password['selfServicePasswordURL'],:selfServicePasswordName => Setting.plugin_redmine_self_service_password['selfServicePasswordName']) %>
+<%= l(:notice_account_activated_ssp , :selfServicePasswordURL => Setting.plugin_redmine_self_service_password['selfServicePasswordURL'],:selfServicePasswordName => Setting.plugin_redmine_self_service_password['selfServicePasswordName'],:name=> (@user.firstname + " " + @user.lastname)) %>
 <%= l(:label_login) %>: <%= @login_url %>

@@ -1,6 +1,6 @@
 # English strings go here for Rails i18n
 en:
-  notice_account_activated_ssp: "Your account has been activated. Before you can login, you need to set your password in %{selfServicePasswordName}. You will receive an email with information on how to set your password. You can also set your password by accessing directly to <a href='%{selfServicePasswordURL}?action=sendtoken' target='_blank'>%{selfServicePasswordURL}?action=sendtoken</a>. After sucessfully setting your password, you can log in using the link bellow."
+  notice_account_activated_ssp: "Dear %{name}.<br/><br/> Your account has been activated. Before you can login, you need to set your password in %{selfServicePasswordName}. You will receive an email with information on how to set your password. You can also set your password by accessing directly to <a href='%{selfServicePasswordURL}?action=sendtoken' target='_blank'>%{selfServicePasswordURL}?action=sendtoken</a>. After sucessfully setting your password, you can log in using the link bellow."
   selfServicePasswordURL: Self service password service address
   selfServicePasswordName: Self service password service name
   notice_account_invalid_creditentials_ssp: "Invalid user or password. <a href='%{selfServicePasswordURL}?action=sendtoken' target='_blank'>Recover your password</a>"

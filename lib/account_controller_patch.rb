@@ -30,7 +30,8 @@ module AccountControllerPatch
         if @user.save
           session[:auth_source_registration] = nil
           self.logged_user = @user
-          flash[:notice] = l(:notice_account_activated_ssp, :selfServicePasswordURL => Setting.plugin_redmine_self_service_password['selfServicePasswordURL'],:selfServicePasswordName => Setting.plugin_redmine_self_service_password['selfServicePasswordName'])
+          name=@user.firstname+" "+@user.lastname
+          flash[:notice] = l(:notice_account_activated_ssp, :selfServicePasswordURL => Setting.plugin_redmine_self_service_password['selfServicePasswordURL'],:selfServicePasswordName => Setting.plugin_redmine_self_service_password['selfServicePasswordName'], :name => name)
           redirect_to :controller => 'my', :action => 'account'
         end
       else
@@ -59,7 +60,8 @@ module AccountControllerPatch
     user.activate
     if user.save
       token.destroy
-      flash[:notice] = l(:notice_account_activated_ssp, :selfServicePasswordURL => Setting.plugin_redmine_self_service_password['selfServicePasswordURL'],:selfServicePasswordName => Setting.plugin_redmine_self_service_password['selfServicePasswordName'])
+      name=user.firstname+" "+user.lastname
+      flash[:notice] = l(:notice_account_activated_ssp, :selfServicePasswordURL => Setting.plugin_redmine_self_service_password['selfServicePasswordURL'],:selfServicePasswordName => Setting.plugin_redmine_self_service_password['selfServicePasswordName'],:name => name)
     end
     redirect_to :action => 'login'
   end
@@ -76,7 +78,8 @@ module AccountControllerPatch
     user.last_login_on = Time.now
     if user.save
       self.logged_user = user
-      flash[:notice] = l(:notice_account_activated_ssp, :selfServicePasswordURL => Setting.plugin_redmine_self_service_password['selfServicePasswordURL'],:selfServicePasswordName => Setting.plugin_redmine_self_service_password['selfServicePasswordName'])
+      name=user.firstname+" "+user.lastname
+      flash[:notice] = l(:notice_account_activated_ssp, :selfServicePasswordURL => Setting.plugin_redmine_self_service_password['selfServicePasswordURL'],:selfServicePasswordName => Setting.plugin_redmine_self_service_password['selfServicePasswordName'],:name => name)
       redirect_to :controller => 'my', :action => 'account'
     else
       yield if block_given?
