@@ -1,6 +1,6 @@
 # Portuguese strings go here for Rails i18n
 pt:
-  notice_account_activated_ssp: "Caro %{name},<br/><br/> A sua conta foi activada. Antes que possa autenticar-se terá que definir a sua palavra-chave no %{selfServicePasswordName}. Irá receber um email com instruções para definir a sua palavra-chave. Pode também definir a sua palavra-chave acedendo diretamente a <a href='%{selfServicePasswordURL}?action=sendtoken' target='_blank'>%{selfServicePasswordURL}?action=sendtoken</a>. Depois de ter definido corretamente a sua palavra-chave poderá autenticar-se usando o endereço em baixo."
+  notice_account_activated_ssp: "Caro(a) %{name},<br/><br/> A sua conta foi activada. Antes que possa autenticar-se terá que definir a sua palavra-chave no %{selfServicePasswordName}. Irá receber um email com instruções para definir a sua palavra-chave. Pode também definir a sua palavra-chave acedendo diretamente a <a href='%{selfServicePasswordURL}?action=sendtoken' target='_blank'>%{selfServicePasswordURL}?action=sendtoken</a>. Depois de ter definido corretamente a sua palavra-chave poderá autenticar-se usando o endereço em baixo."
   selfServicePasswordURL: Endereço do serviço de passwords
   selfServicePasswordName: Nome do serviço de passwords
   notice_account_invalid_creditentials_ssp: "Utilizador ou palavra-chave inválidos. <a href='%{selfServicePasswordURL}?action=sendtoken' target='_blank'>Recuperar a palavra-chave</a>"
