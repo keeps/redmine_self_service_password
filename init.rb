@@ -2,6 +2,8 @@ require 'redmine'
 require 'dispatcher'
 require 'account_controller_patch'
 
+require_dependency 'hooks/cssHooks'
+
 Redmine::Plugin.register :redmine_self_service_password do
   name 'Redmine Self Service Password plugin'
   author 'Sébastien Leroux'

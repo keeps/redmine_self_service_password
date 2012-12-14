@@ -5,3 +5,6 @@ pt:
   selfServicePasswordName: Nome do serviço de passwords
   notice_account_invalid_creditentials_ssp: "Utilizador ou palavra-chave inválidos. <a href='%{selfServicePasswordURL}?action=sendtoken' target='_blank'>Recuperar a palavra-chave</a>"
   label_send_password_reset_email: Enviar email de recuperação de password
+  registration_agreement_title: TITULO
+  registration_agreement_text:  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus semper pharetra porta. Donec commodo dapibus convallis. Pellentesque mattis fermentum velit. Pellentesque et tristique purus. Donec aliquet mi non magna tristique varius. Nulla sed imperdiet ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur euismod, tortor id placerat semper, tortor nibh elementum dolor, sit amet tincidunt purus tellus vel felis. Mauris molestie velit nulla, eu feugiat eros. Ut id iaculis ante. Phasellus sagittis egestas nunc, ac varius neque iaculis vitae. Donec et libero ac eros laoreet convallis. Phasellus ac nunc eros. Nam sit amet enim turpis. 
+  registration_agreement_checkbox: CONCORDO

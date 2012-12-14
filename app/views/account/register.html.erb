@@ -18,7 +18,19 @@
 <p><%= f.text_field :lastname, :required => true %></p>
 <p><%= f.text_field :mail, :required => true %></p>
 <p><%= f.select :language, lang_options_for_select %></p>
+<fieldset>
+<div class="agreementLicense">
 
+<div class="agreementLicenseTitle"><%= l(:registration_agreement_title) %></div>
+<br/>
+<div class="agreementLicenseText"><%= l(:registration_agreement_text) %></div>
+<br/>
+
+
+</div>
+<div class="agreementCheckbox"><input onclick="updateButton();" id="agreementCheckbox" type="checkbox" name="agree" value="yes" /><%= l(:registration_agreement_checkbox) %></div>
+<br/>
+</fieldset>
 <% if Setting.openid? %>
   <p><%= f.text_field :identity_url  %></p>
 <% end %>
@@ -28,5 +40,15 @@
 <% end %>
 </div>
 
-<%= submit_tag l(:button_submit) %>
+<%= submit_tag l(:button_submit), :disabled  => true, :id => "submitID" %>
 <% end %>
+
+<script>
+function updateButton(){
+	if(document.getElementById("agreementCheckbox").checked){
+		document.getElementById("submitID").disabled=false;
+	}else{
+		document.getElementById("submitID").disabled=true;
+	}
+}
+</script>
