@@ -18,19 +18,22 @@
 <p><%= f.text_field :lastname, :required => true %></p>
 <p><%= f.text_field :mail, :required => true %></p>
 <p><%= f.select :language, lang_options_for_select %></p>
+<% if l(:registration_agreement_text, :default=>"") !="" %>
 <fieldset>
 <div class="agreementLicense">
-
+<% if l(:registration_agreement_title, :default=>"") !="" %>
 <div class="agreementLicenseTitle"><%= l(:registration_agreement_title) %></div>
 <br/>
+<% end %>
 <div class="agreementLicenseText"><%= l(:registration_agreement_text) %></div>
 <br/>
 
 
 </div>
-<div class="agreementCheckbox"><input onclick="updateButton();" id="agreementCheckbox" type="checkbox" name="agree" value="yes" /><%= l(:registration_agreement_checkbox) %></div>
+<div class="agreementCheckbox"><input onclick="updateButton();" id="agreementCheckbox" type="checkbox" name="agree" value="yes" /><%= l(:registration_agreement_checkbox, :default=>"OK") %></div>
 <br/>
 </fieldset>
+<% end %>
 <% if Setting.openid? %>
   <p><%= f.text_field :identity_url  %></p>
 <% end %>
@@ -39,8 +42,11 @@
   <p><%= custom_field_tag_with_label :user, value %></p>
 <% end %>
 </div>
-
-<%= submit_tag l(:button_submit), :disabled  => true, :id => "submitID" %>
+<% if l(:registration_agreement_text, :default=>"") !="" %>
+<%= submit_tag l(:button_submit, :default=>"OK"), :disabled  => true, :id => "submitID" %>
+<% else %>
+<%= submit_tag l(:button_submit, :default=>"OK"), :id => "submitID" %>
+<% end %>
 <% end %>
 
 <script>
