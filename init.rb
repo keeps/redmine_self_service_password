@@ -1,5 +1,8 @@
+#!/bin/env ruby
+# encoding: utf-8
+
 require 'redmine'
-require 'dispatcher'
+require 'dispatcher' unless Rails::VERSION::MAJOR >= 3
 require 'account_controller_patch'
 
 require_dependency 'hooks/cssHooks'
@@ -17,7 +20,16 @@ Redmine::Plugin.register :redmine_self_service_password do
   }, :partial => 'settings/self_service_password'
 end
 
-Dispatcher.to_prepare do
-	 require_dependency 'account_controller'
-  AccountController.send(:include, AccountControllerPatch)
+
+if Rails::VERSION::MAJOR >= 3
+	ActionDispatch::Callbacks.to_prepare do
+		require_dependency 'account_controller'
+		AccountController.send(:include, AccountControllerPatch)
+	end
+
+else
+	Dispatcher.to_prepare do
+		require_dependency 'account_controller'
+		AccountController.send(:include, AccountControllerPatch)
+	end
 end
