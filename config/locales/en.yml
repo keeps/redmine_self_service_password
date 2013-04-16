@@ -8,3 +8,5 @@ en:
   registration_agreement_title: TITLE
   registration_agreement_text:  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus semper pharetra porta. Donec commodo dapibus convallis. Pellentesque mattis fermentum velit. Pellentesque et tristique purus. Donec aliquet mi non magna tristique varius. Nulla sed imperdiet ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur euismod, tortor id placerat semper, tortor nibh elementum dolor, sit amet tincidunt purus tellus vel felis. Mauris molestie velit nulla, eu feugiat eros. Ut id iaculis ante. Phasellus sagittis egestas nunc, ac varius neque iaculis vitae. Donec et libero ac eros laoreet convallis. Phasellus ac nunc eros. Nam sit amet enim turpis. 
   registration_agreement_checkbox: AGREE
+  ldap_activation_message: "Dear %{name},<br/><br/> Your account has been activated. You can use your %{ldap} credentials to access this platform."
+  mail_subject_register: KEEP Solutions Redmine account activation
